@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
-function connect() {
+async function connect() {
   try {
-    mongoose.connect("mongodb://127.0.0.1:27017/trungth_dev");
+    mongoose.set("strictQuery", true);
+    await mongoose.connect("mongodb://127.0.0.1:27017/trungth_dev");
 
     console.log("Connect DB Successfully !");
   } catch (error) {
