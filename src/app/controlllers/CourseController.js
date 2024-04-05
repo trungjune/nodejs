@@ -19,6 +19,7 @@ class CourseController {
   // [POST] / courses/store
   store(req, res, next) {
     req.body.image = `https://i.ytimg.com/vi/${req.body.videoId}/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCFi7QkMmas5OmYFtamrzLyGtEPAw`;
+
     const courses = new Course(req.body);
     courses
       .save()
